@@ -36,10 +36,10 @@ def get_birthday():
   return (next - today).days
 
 def get_my_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + mybirthday, "%Y-%m-%d")
-  if next < datetime.now():
-    next = next.replace(year=next.year + 1)
-  return (next - today).days
+  next1 = datetime.strptime(str(date.today().year) + "-" + mybirthday, "%Y-%m-%d")
+  if next1 < datetime.now():
+    next1 = next1.replace(year=next.year + 1)
+  return (next1 - today).days
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
