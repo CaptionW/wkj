@@ -10,7 +10,6 @@ today = datetime.now()
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
-mybirthday = os.environ['MYBIRTHDAY']
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
@@ -34,12 +33,6 @@ def get_birthday():
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
   return (next - today).days
-
-def get_my_birthday():
-  next1 = datetime.strptime(str(date.today().year) + "-" + mybirthday, "%Y-%m-%d")
-  if next1 < datetime.now():
-    next1 = next1.replace(year=next.year + 1)
-  return (next1 - today).days
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
